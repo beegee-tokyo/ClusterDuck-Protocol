@@ -1,0 +1,16 @@
+#define CDPCFG_PIN_ANT -1
+
+// LoRa configuration
+#define CDPCFG_PIN_LORA_CS 13
+#define CDPCFG_PIN_LORA_DIO0 -1
+#define CDPCFG_PIN_LORA_RST 14
+
+// special SPI
+#define CDPCFG_PIN_LORA_SPI_SCK 10
+#define CDPCFG_PIN_LORA_SPI_MISO 12
+#define CDPCFG_PIN_LORA_SPI_MOSI 11
+#define CDPCFG_LORA_CLASS SX1262
+#define CDPCFG_PIN_LORA_DIO1 29
+
+// OLED display settings
+#define CDPCFG_OLED_NONE

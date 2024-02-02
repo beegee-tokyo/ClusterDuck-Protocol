@@ -1,6 +1,6 @@
 #include "include/DuckRadio.h"
 
-#if !defined(CDPCFG_HELTEC_CUBE_CELL)
+#if !defined(CDPCFG_HELTEC_CUBE_CELL) && !defined(_VARIANT_RAK11200_)
 #include "include/DuckUtils.h"
 #include <RadioLib.h>
 

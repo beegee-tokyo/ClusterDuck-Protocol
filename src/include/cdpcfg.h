@@ -164,6 +164,14 @@
 #elif defined(ARDUINO_LoPy4)
 #include "include/boards/lopy4.h"
 
+/*
+ * BOARD "RAK11200"
+ * https://docs.rakwireless.com/Product-Categories/WisBlock/RAK11200/Overview
+ * pio: board = rak11200
+ */
+#elif defined(_VARIANT_RAK11200_)
+#include "include/boards/rak11200.h" 
+#warning "Using RAK11200"
 
 #else // Default to WIFI_LORA_32_V2 board
 #if !defined(ARDUINO_heltec_wifi_lora_32_V2)
