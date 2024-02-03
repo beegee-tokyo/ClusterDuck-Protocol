@@ -81,6 +81,7 @@ static void OnLoraRxError(void) {
 // }
 
 int DuckRadio::setupRadio(LoraConfigParams config) {
+	loginfo("Start RAK11200 setupRadio");
 	pinMode(LED_GREEN, OUTPUT);
 	pinMode(LED_BLUE, OUTPUT);
 	digitalWrite(LED_GREEN, LOW);
@@ -105,6 +106,7 @@ int DuckRadio::setupRadio(LoraConfigParams config) {
 	Radio.SetPublicNetwork(false);
 	// Radio.SetSyncWord(LORA_MAC_PRIVATE_SYNCWORD);
 	Radio.Sleep();
+	logerr("setupRadio finished with: " + String(DUCK_ERR_NONE));
 	return DUCK_ERR_NONE;
 }
 

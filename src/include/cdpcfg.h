@@ -31,6 +31,9 @@
 #ifndef CDPCFG
 #define CDPCFG
 
+#ifndef _VARIANT_RAK11200_
+#define _VARIANT_RAK11200_
+#endif
 
 /*
  * HARDWARE SECTION // BOARD PINS
@@ -173,18 +176,18 @@
 #include "include/boards/rak11200.h" 
 #warning "Using RAK11200"
 
-#else // Default to WIFI_LORA_32_V2 board
-#if !defined(ARDUINO_heltec_wifi_lora_32_V2)
-#warning "NO BOARD DEFINED, DEFAULTING TO HELTEC v2"
-#define CDPCFG_BOARD_DEFAULT
-#endif
 
 /*
  * BOARD "heltec lora v2"
  * https://heltec.org/project/wifi-lora-32/
  * pio: board = heltec_wifi_lora_32_V2
  */
+#elif defined(ARDUINO_heltec_wifi_lora_32_V2)
 #include "include/boards/heltec_wifi_lora_32_V2.h"
+
+#else // No board defined
+#warning "NO BOARD DEFINED, DEFAULTING TO HELTEC v2"
+#define CDPCFG_BOARD_DEFAULT
 
 #endif // Board definitions
 
@@ -262,6 +265,10 @@
 /// Default LoRa Module supported chipset when using the RadioLib library
 #if !defined(CDPCFG_LORA_CLASS) && !defined(CDPCFG_HELTEC_CUBE_CELL)
 #define CDPCFG_LORA_CLASS SX1276
+#endif
+
+#if defined(_VARIANT_RAK11200_)
+#define CDPCFG_LORA_CLASS SX1262
 #endif
 
 #ifndef CDPCFG_OLED_CLASS

@@ -1,5 +1,7 @@
 #define CDPCFG_PIN_ANT -1
 
+#define CDPCFG_PIN_LED1 LED_GREEN
+
 // LoRa configuration
 #define CDPCFG_PIN_LORA_CS 13
 #define CDPCFG_PIN_LORA_DIO0 -1
